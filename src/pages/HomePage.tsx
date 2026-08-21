@@ -179,8 +179,7 @@ const HomePage = () => {
                   View Work
                 </Button>
                 <Button
-                  component="a"
-                  href="#contact"
+                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                   variant="outlined"
                   size="large"
                   sx={{

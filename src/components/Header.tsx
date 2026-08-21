@@ -24,7 +24,8 @@ const Header = ({ links, title }: HeaderProps) => {
         display: "flex",
         alignItems: "center",
         justifyContent: title ? "flex-start" : "center",
-        px: { xs: 3, md: 8 },
+        pl: { xs: 8, md: 8 },
+        pr: { xs: 3, md: 8 },
         py: 2,
         backgroundColor: "rgba(5,6,10,0.7)",
         backdropFilter: "blur(10px)",
@@ -41,7 +42,14 @@ const Header = ({ links, title }: HeaderProps) => {
       {links && links.length > 0 && (
         <Stack direction="row" spacing={{ xs: 2, sm: 4 }} sx={{ flexWrap: "wrap", justifyContent: "center" }}>
           {links.map(({ label, href }) => (
-            <Box key={label} component="a" href={href} sx={{ textDecoration: "none" }}>
+            <Box
+              key={label}
+              component="button"
+              onClick={() => {
+                document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+              }}
+              sx={{ background: "none", border: 0, p: 0, cursor: "pointer", font: "inherit" }}
+            >
               <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
                 <Typography
                   variant="body2"
