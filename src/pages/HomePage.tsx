@@ -129,7 +129,7 @@ const HomePage = () => {
                     WebkitTextFillColor: "transparent",
                   }}
                 >
-                  {word}.
+                  {word}
                 </motion.span>
               ))}
             </Typography>
