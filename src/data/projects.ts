@@ -29,7 +29,6 @@ import beautyLandingCover from "../assets/images/beauty-landing/beauty-main.png"
 import beautyLandingImg1 from "../assets/images/beauty-landing/beauty.png";
 import beautyLandingImg2 from "../assets/images/beauty-landing/beauty2.png";
 import beautyLandingImg3 from "../assets/images/beauty-landing/beauty3.png";
-import beautyLandingImg4 from "../assets/images/beauty-landing/beauty4.png";
 import beautyLandingImg5 from "../assets/images/beauty-landing/beauty5.png";
 import beautyLandingImg6 from "../assets/images/beauty-landing/beauty6.png";
 import beautyLandingImg7 from "../assets/images/beauty-landing/beauty7.png";
@@ -48,7 +47,6 @@ export const projects = [
       { type: "image", src: beautyLandingImg1, alt: "" },
       { type: "image", src: beautyLandingImg2, alt: "" },
       { type: "image", src: beautyLandingImg3, alt: "" },
-      { type: "image", src: beautyLandingImg4, alt: "" },
       { type: "image", src: beautyLandingImg5, alt: "" },
       { type: "image", src: beautyLandingImg6, alt: "" },
       { type: "image", src: beautyLandingImg7, alt: "" },
