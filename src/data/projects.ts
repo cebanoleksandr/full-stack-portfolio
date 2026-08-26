@@ -25,7 +25,56 @@ import englishStudyCover from "../assets/images/english-study/english-main.png";
 import englishStudyImg1 from "../assets/images/english-study/english1.png";
 import englishStudyImg2 from "../assets/images/english-study/english2.png";
 
+import beautyLandingCover from "../assets/images/beauty-landing/beauty-main.png";
+import beautyLandingImg1 from "../assets/images/beauty-landing/beauty.png";
+import beautyLandingImg2 from "../assets/images/beauty-landing/beauty2.png";
+import beautyLandingImg3 from "../assets/images/beauty-landing/beauty3.png";
+import beautyLandingImg4 from "../assets/images/beauty-landing/beauty4.png";
+import beautyLandingImg5 from "../assets/images/beauty-landing/beauty5.png";
+import beautyLandingImg6 from "../assets/images/beauty-landing/beauty6.png";
+import beautyLandingImg7 from "../assets/images/beauty-landing/beauty7.png";
+import beautyLandingImg8 from "../assets/images/beauty-landing/beauty8.png";
+
 export const projects = [
+  {
+    slug: "beauty-landing",
+    title: "Silk — Beauty Salon Landing Page",
+    shortDescription:
+      "A single-page landing site for a fictional beauty salon, with hero, services, team, testimonials, FAQ, and a validated booking form — React + TypeScript + MUI.",
+    fullDescription:
+      "A single-page landing site for a fictional beauty salon (\"Silk\"), built with React, TypeScript, and MUI. The page is assembled from a set of self-contained sections: a full-viewport hero, a salon \"our story\" section, service cards (manicure, massage, haircut), team portraits, guest testimonials, an accordion-style FAQ, and a booking form built with React Hook Form and Yup for client-side validation. Sections are separated by a decorative SVG thread divider and animated in with a scroll-triggered fade/slide-in reveal wrapper. Styling combines a custom dark, gold-accented MUI theme with a Tailwind CSS utility layer alongside MUI's `sx` prop, using self-hosted Cormorant Garamond and Jost fonts via Fontsource. The header is a fixed nav bar with a mobile drawer for smaller viewports. The booking form validates entirely client-side and doesn't submit anywhere — on submit it simply shows a confirmation toast. The site is built with Vite and deployed to GitHub Pages under a dedicated base path.",
+    cover: beautyLandingCover,
+    media: [
+      { type: "image", src: beautyLandingImg1, alt: "" },
+      { type: "image", src: beautyLandingImg2, alt: "" },
+      { type: "image", src: beautyLandingImg3, alt: "" },
+      { type: "image", src: beautyLandingImg4, alt: "" },
+      { type: "image", src: beautyLandingImg5, alt: "" },
+      { type: "image", src: beautyLandingImg6, alt: "" },
+      { type: "image", src: beautyLandingImg7, alt: "" },
+      { type: "image", src: beautyLandingImg8, alt: "" },
+    ],
+    stack: {
+      frontend: [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "MUI",
+        "Tailwind CSS (@tailwindcss/vite)",
+        "react-hook-form",
+        "Yup",
+        "Fontsource (Cormorant Garamond, Jost)",
+      ],
+      backend: [],
+    },
+    role: "Frontend Developer (solo)",
+    demoUrl: "https://cebanoleksandr.github.io/beauty-landing/",
+    repoUrl: {
+      frontend: "https://github.com/cebanoleksandr/beauty-landing",
+    },
+    year: 2026,
+    featured: false,
+  },
   {
     slug: "nice-gadgets-online-store",
     title: "Nice Gadgets — Online Store",
