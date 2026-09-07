@@ -148,7 +148,13 @@ const ProjectCard = ({ project, index = 0 }: ProjectCardProps) => {
 
               <Stack direction="row" spacing={0.5}>
                 {project.demoUrl && (
-                  <Tooltip title="Live demo">
+                  <Tooltip
+                    title={
+                      project.stack?.backend?.length > 0
+                        ? "Live demo (deployed on a free-tier server — first request may take up to a minute)"
+                        : "Live demo"
+                    }
+                  >
                     <IconButton
                       component="a"
                       href={project.demoUrl}

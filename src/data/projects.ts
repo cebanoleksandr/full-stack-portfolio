@@ -100,6 +100,10 @@ export const projects = [
         "Nodemailer",
         "Docker Compose",
       ],
+      credentials: {
+        email: "owner@promofire.dev",
+        password: "ChangeMe123!",
+      }
     },
     role: "Full-Stack Developer (solo)",
     demoUrl: "https://cebanoleksandr.github.io/my-promofire-fe/",

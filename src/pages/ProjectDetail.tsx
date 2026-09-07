@@ -151,6 +151,35 @@ const ProjectDetail = () => {
               </Button>
             )}
           </Stack>
+
+          {project.demoUrl && project.stack?.backend?.length > 0 && (
+            <Typography variant="caption" sx={{ display: "block", mt: 1.5, color: "text.secondary" }}>
+              Deployed on a free-tier server — the first request may take up to a minute to wake up.
+            </Typography>
+          )}
+
+          {project.stack?.credentials && (
+            <Paper
+              variant="outlined"
+              sx={{
+                mt: 2,
+                p: 2,
+                maxWidth: 420,
+                borderColor: "rgba(255,255,255,0.16)",
+                backgroundColor: "rgba(255,255,255,0.03)",
+              }}
+            >
+              <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+                Demo credentials
+              </Typography>
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                Email: {project.stack.credentials.email}
+              </Typography>
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                Password: {project.stack.credentials.password}
+              </Typography>
+            </Paper>
+          )}
         </motion.div>
 
         <motion.div
