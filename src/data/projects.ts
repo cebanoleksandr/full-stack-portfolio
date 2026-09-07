@@ -34,7 +34,82 @@ import beautyLandingImg6 from "../assets/images/beauty-landing/beauty6.png";
 import beautyLandingImg7 from "../assets/images/beauty-landing/beauty7.png";
 import beautyLandingImg8 from "../assets/images/beauty-landing/beauty8.png";
 
+import promofireCover from "../assets/images/promofire/promofire-main.png";
+import promofireImg1 from "../assets/images/promofire/promofire1.png";
+import promofireImg2 from "../assets/images/promofire/promofire2.png";
+import promofireImg3 from "../assets/images/promofire/promofire3.png";
+import promofireImg4 from "../assets/images/promofire/promofire4.png";
+import promofireImg5 from "../assets/images/promofire/promofire5.png";
+import promofireImg6 from "../assets/images/promofire/promofire6.png";
+import promofireImg7 from "../assets/images/promofire/promofire7.png";
+import promofireImg8 from "../assets/images/promofire/promofire8.png";
+import promofireImg9 from "../assets/images/promofire/promofire9.png";
+import promofireImg10 from "../assets/images/promofire/promofire10.png";
+import promofireImg11 from "../assets/images/promofire/promofire11.png";
+import promofireImg12 from "../assets/images/promofire/promofire12.png";
+
 export const projects = [
+  {
+    slug: "promofire",
+    title: "PromoFire — Promo Campaign & Distribution Platform",
+    shortDescription:
+      "A full-stack multi-tenant platform for managing promo campaigns, codes, and distributors with SDK redemptions and analytics — React + TypeScript frontend backed by a NestJS + PostgreSQL API.",
+    fullDescription:
+      "A multi-tenant promo-code management platform built end-to-end, from a NestJS REST API to an administrative React SPA. The system organizes access across an Account → Workspace → Membership hierarchy with role-based scoping (Owner, Admin, Distributor). On the frontend, users manage marketing campaigns, generate ambiguity-free promo codes, manage distributors and tracked customers, and monitor performance through interactive Recharts dashboard widgets and stat cards. Routing is powered by React Router v7 with route guards, dark/light theme switching, and multi-language support via react-i18next. Frontend architecture implements a strict three-layer data pattern: a typed Axios client with interceptors for token attachment and 401 handling, domain services, and TanStack Query hooks driven by centralized query keys, with Redux Toolkit managing global UI alerts. On the backend, a NestJS 10 API handles two authentication flows: JWT with workspace selection for panel users, and a SHA-256 hashed API-key scheme with rate limiting for SDK-based code redemptions. Persistence is managed via TypeORM on PostgreSQL, with request validation using class-validator DTOs and transactional emails delivered via Nodemailer.",
+    cover: promofireCover,
+    media: [
+      { type: "image", src: promofireImg1, alt: "" },
+      { type: "image", src: promofireImg2, alt: "" },
+      { type: "image", src: promofireImg3, alt: "" },
+      { type: "image", src: promofireImg4, alt: "" },
+      { type: "image", src: promofireImg5, alt: "" },
+      { type: "image", src: promofireImg6, alt: "" },
+      { type: "image", src: promofireImg7, alt: "" },
+      { type: "image", src: promofireImg8, alt: "" },
+      { type: "image", src: promofireImg9, alt: "" },
+      { type: "image", src: promofireImg10, alt: "" },
+      { type: "image", src: promofireImg11, alt: "" },
+      { type: "image", src: promofireImg12, alt: "" },
+      { type: "video", src: "https://www.loom.com/share/a9ed33acdc9147ebbca64862936428d7", provider: "loom" }
+    ],
+    stack: {
+      frontend: [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "React Router v7",
+        "TanStack Query",
+        "Redux Toolkit",
+        "MUI v9",
+        "Tailwind CSS v4",
+        "react-i18next",
+        "react-hook-form",
+        "Yup",
+        "Recharts",
+        "Framer Motion",
+        "Axios",
+      ],
+      backend: [
+        "NestJS 10",
+        "TypeScript",
+        "TypeORM",
+        "PostgreSQL",
+        "JWT (Passport)",
+        "API Key Auth (SHA-256)",
+        "class-validator",
+        "Nodemailer",
+        "Docker Compose",
+      ],
+    },
+    role: "Full-Stack Developer (solo)",
+    demoUrl: "https://cebanoleksandr.github.io/my-promofire-fe/",
+    repoUrl: {
+      frontend: "https://github.com/cebanoleksandr/my-promofire-fe",
+      backend: "https://github.com/cebanoleksandr/my-promofire-be",
+    },
+    year: 2026,
+    featured: false,
+  },
   {
     slug: "beauty-landing",
     title: "Silk — Beauty Salon Landing Page",
