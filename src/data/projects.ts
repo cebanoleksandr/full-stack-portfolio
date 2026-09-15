@@ -48,7 +48,69 @@ import promofireImg10 from "../assets/images/promofire/promofire10.png";
 import promofireImg11 from "../assets/images/promofire/promofire11.png";
 import promofireImg12 from "../assets/images/promofire/promofire12.png";
 
+import beautyCover from "../assets/images/beauty/beauty-main.png";
+import beauty1 from "../assets/images/beauty/beauty.png";
+import beauty2 from "../assets/images/beauty/beauty2.png";
+import beauty4 from "../assets/images/beauty/beauty4.png";
+import beauty3 from "../assets/images/beauty/beauty3.png";
+import beauty5 from "../assets/images/beauty/beauty5.png";
+import beauty6 from "../assets/images/beauty/beauty6.png";
+
 export const projects = [
+  {
+    slug: "beauty-salon-booking",
+    title: "Beauty Salon — Booking Platform",
+    shortDescription:
+      "A full-stack beauty salon booking platform with role-based workflows for clients, masters, salon owners, and admins — React + TypeScript frontend backed by a NestJS + PostgreSQL API.",
+    fullDescription:
+      "A full-stack beauty salon booking platform built end-to-end, from a NestJS REST API to a React SPA. Clients can discover and search salons, view available services and masters, choose appointments, and manage their bookings and notifications. Masters have a dedicated dashboard for managing upcoming bookings, services, working hours, blocked time, and salon join requests, while salon owners manage their salons, locations, services, and staff. The application implements four role-based access levels (Client, Master, Salon Owner, Admin) with protected routes on the frontend and JWT authentication with role-based guards on the backend. Frontend data fetching follows a consistent three-layer architecture: typed Axios API services, TanStack Query hooks for server state and caching, and page components that consume only the hooks, while Redux Toolkit is used for client-side UI state such as global alerts. The UI combines MUI components with Tailwind CSS and supports four languages through react-i18next. Leaflet and React Leaflet provide interactive maps for discovering nearby salons and selecting salon locations. On the backend, a NestJS API is organized into domain modules for users, authentication, salons, masters, services, master-service assignments, working hours, blocked times, bookings, notifications, salon join requests, and reviews. PostgreSQL persistence is managed with TypeORM and migration-based schema management, with database synchronization disabled.",
+    cover: beautyCover,
+    media: [
+      { type: "image", src: beauty1, alt: "" },
+      { type: "image", src: beauty2, alt: "" },
+      { type: "image", src: beauty3, alt: "" },
+      { type: "image", src: beauty4, alt: "" },
+      { type: "image", src: beauty5, alt: "" },
+      { type: "image", src: beauty6, alt: "" },
+      { type: "video", src: "https://www.loom.com/share/fdcf773cb7594c928d202488332b9630", provider: "loom" },
+    ],
+    stack: {
+      frontend: [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "React Router",
+        "TanStack Query",
+        "Redux Toolkit",
+        "MUI",
+        "Tailwind CSS",
+        "react-i18next",
+        "Leaflet",
+        "react-leaflet",
+        "react-hook-form",
+        "Yup",
+        "Axios",
+      ],
+      backend: [
+        "NestJS",
+        "TypeScript",
+        "TypeORM",
+        "PostgreSQL",
+        "JWT (@nestjs/passport, @nestjs/jwt)",
+        "Role-Based Access Control",
+        "class-validator",
+        "Docker Compose",
+      ],
+    },
+      role: "Full-Stack Developer (solo)",
+      demoUrl: "https://cebanoleksandr.github.io/beauty-salon-fe/",
+      repoUrl: {
+      frontend: "https://github.com/cebanoleksandr/beauty-salon-fe",
+      backend: "https://github.com/cebanoleksandr/beauty-salon-be",
+    },
+    year: 2026,
+    featured: false,
+  },
   {
     slug: "promofire",
     title: "PromoFire — Promo Campaign & Distribution Platform",

@@ -15,9 +15,12 @@ const ProjectsPage = () => {
           <Typography variant="h3" sx={{ fontWeight: 800, mt: 1, mb: 2 }}>
             Projects.
           </Typography>
-          <Typography sx={{ color: "text.secondary", maxWidth: 640, mb: 8 }}>
+          <Typography sx={{ color: "text.secondary", maxWidth: 640, mb: 1 }}>
             A selection of full-stack apps I've built end-to-end — from REST APIs and databases to
             responsive, animated interfaces.
+          </Typography>
+          <Typography sx={{ color: "text.secondary", fontWeight: 600, mb: 8 }}>
+            {projects.length} project{projects.length === 1 ? "" : "s"}
           </Typography>
         </motion.div>
 
