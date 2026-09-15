@@ -49,7 +49,7 @@ import promofireImg11 from "../assets/images/promofire/promofire11.png";
 import promofireImg12 from "../assets/images/promofire/promofire12.png";
 
 import beautyCover from "../assets/images/beauty/beauty-main.png";
-import beauty1 from "../assets/images/beauty/beauty.png";
+import beauty1 from "../assets/images/beauty/beauty1.png";
 import beauty2 from "../assets/images/beauty/beauty2.png";
 import beauty4 from "../assets/images/beauty/beauty4.png";
 import beauty3 from "../assets/images/beauty/beauty3.png";
