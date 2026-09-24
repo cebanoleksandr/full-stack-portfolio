@@ -56,7 +56,84 @@ import beauty3 from "../assets/images/beauty/beauty3.png";
 import beauty5 from "../assets/images/beauty/beauty5.png";
 import beauty6 from "../assets/images/beauty/beauty6.png";
 
+import orbitCover from "../assets/images/zoho/zoho-main.png";
+import orbit1 from "../assets/images/zoho/zoho1.png";
+import orbit2 from "../assets/images/zoho/zoho2.png";
+import orbit4 from "../assets/images/zoho/zoho4.png";
+import orbit3 from "../assets/images/zoho/zoho3.png";
+import orbit5 from "../assets/images/zoho/zoho5.png";
+import orbit6 from "../assets/images/zoho/zoho6.png";
+import orbit7 from "../assets/images/zoho/zoho7.png";
+import orbit8 from "../assets/images/zoho/zoho8.png";
+import orbit9 from "../assets/images/zoho/zoho9.png";
+import orbit10 from "../assets/images/zoho/zoho10.png";
+import orbit11 from "../assets/images/zoho/zoho11.png";
+
 export const projects = [
+  {
+    slug: "orbit-crm",
+    title: "Orbit CRM — Sales CRM Platform",
+    shortDescription:
+      "A full-stack multi-tenant CRM covering leads, contacts, accounts, deals, activities, and sales pipelines, with API keys, signed webhooks, and custom fields — React + TypeScript frontend backed by a NestJS + PostgreSQL API.",
+    fullDescription:
+      "A lightweight Zoho-style CRM built end-to-end, from a NestJS REST API to a React SPA. Users work through the full sales flow: they manage leads with search, pagination, inline editing and status changes, convert a lead into a contact, an account, and an optional deal, and track contacts, accounts, and deals with linked records on every detail page. Activities (tasks, calls, meetings) come with status tabs, quick \"mark complete\" actions, and a dedicated panel on each record, while a dashboard summarizes open leads, active deals, accounts, and pending activities. Multiple sales pipelines are supported, with a default pipeline and configurable stages that carry probability, won/lost flags, and drag-free reordering. A settings area lets organizations create and revoke API keys (a new key is shown only once), subscribe webhooks to events and inspect their delivery history, and define custom fields per entity type whose values are editable right on detail pages. The UI supports four languages (English, Ukrainian, Polish, Spanish) with browser-based detection and is fully responsive, with a collapsible navigation drawer and card-style tables on mobile. Frontend data fetching follows a strict pattern per resource: a typed Axios client with token storage and a single shared refresh request on 401, domain services, and TanStack Query hooks with centralized query keys and automatic invalidation, while a global MutationCache shows localized success/error toasts and Redux Toolkit manages global alerts. Route loaders guard the app and auth branches based on the stored access token. On the backend, a NestJS 10 API organized as modules-per-domain enforces strict multi-tenancy: every table carries an organization_id, and a tenant interceptor stores the caller's context in AsyncLocalStorage so every query is filtered by organization. A composite auth guard accepts either JWT access/refresh tokens for dashboard users or scoped, SHA-256 hashed API keys for integrations. Activities and custom field values attach polymorphically to any CRM record, outgoing webhooks are signed with HMAC-SHA256 and every delivery attempt is logged, and persistence is handled by TypeORM on PostgreSQL with migration-based schema management (synchronize disabled) and a demo-data seed script.",
+    cover: orbitCover,
+    media: [
+      { type: "image", src: orbit1, alt: "" },
+      { type: "image", src: orbit2, alt: "" },
+      { type: "image", src: orbit3, alt: "" },
+      { type: "image", src: orbit4, alt: "" },
+      { type: "image", src: orbit5, alt: "" },
+      { type: "image", src: orbit6, alt: "" },
+      { type: "image", src: orbit7, alt: "" },
+      { type: "image", src: orbit8, alt: "" },
+      { type: "image", src: orbit9, alt: "" },
+      { type: "image", src: orbit10, alt: "" },
+      { type: "image", src: orbit11, alt: "" },
+      { type: "video", src: "https://www.loom.com/share/071650b10dde4489a2f134328547fa0a", provider: "loom" },
+    ],
+    stack: {
+      frontend: [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "React Router v7",
+        "TanStack Query",
+        "Redux Toolkit",
+        "MUI v9",
+        "Tailwind CSS v4",
+        "react-i18next",
+        "react-hook-form",
+        "Yup",
+        "Framer Motion",
+        "Axios",
+      ],
+      backend: [
+        "NestJS 10",
+        "TypeScript",
+        "TypeORM",
+        "PostgreSQL (Neon)",
+        "JWT (Passport, access/refresh tokens)",
+        "API Key Auth (SHA-256, scopes)",
+        "Multi-tenancy (AsyncLocalStorage)",
+        "Webhooks (HMAC-SHA256)",
+        "class-validator",
+        "bcrypt",
+      ],
+      credentials: {
+        email: "admin@acme.test",
+        password: "Password123!",
+      },
+    },
+    role: "Full-Stack Developer (solo)",
+    demoUrl: "https://cebanoleksandr.github.io/zoho-fe/",
+    repoUrl: {
+      frontend: "https://github.com/cebanoleksandr/zoho-fe",
+      backend: "https://github.com/cebanoleksandr/zoho-be",
+    },
+    year: 2026,
+    featured: false,
+  },
   {
     slug: "beauty-salon-booking",
     title: "Beauty Salon — Booking Platform",
