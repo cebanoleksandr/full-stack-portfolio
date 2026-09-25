@@ -69,7 +69,38 @@ import orbit9 from "../assets/images/zoho/zoho9.png";
 import orbit10 from "../assets/images/zoho/zoho10.png";
 import orbit11 from "../assets/images/zoho/zoho11.png";
 
+import img2048 from "../assets/images/2048/2048.png";
+
 export const projects = [
+  {
+    slug: "2048",
+    title: "2048 — Puzzle Game",
+    shortDescription:
+      "A browser version of the classic 2048 puzzle with smooth slide/merge animations, keyboard and swipe controls, and a persisted best score — React + TypeScript + Material UI.",
+    fullDescription:
+      "A browser version of the classic 2048 puzzle, built with React, TypeScript, and Material UI. Players slide tiles across a 4×4 board using arrow keys, WASD, or touch swipes, merging matching tiles to reach the 2048 tile or keep pushing for a higher score, with a win screen offering the option to keep playing and a game-over screen when no moves remain. The game logic in src/game/logic.ts is written as pure functions — sliding, merging, spawning, and win/lose checks — with random tile generation passed in from the outside, keeping the rules easy to test and safe to drive from a React reducer via a dedicated useGame hook that also handles keyboard input and best-score persistence to localStorage. Each tile keeps a stable id so React reuses the same DOM element as it moves, letting CSS transitions animate slides, appearances, and merges, with source tiles sliding into the target cell and a new merged tile appearing on top before being cleaned up on the next move. The board's on-screen size is fully driven by CSS variables (--size, --gap, --cell), and the classic 2048 color palette is defined directly in the Material UI theme. The layout is responsive down to phone screens, and Tailwind CSS is installed and imported alongside MUI, though not yet used by the game UI.",
+    cover: img2048,
+    media: [
+      { type: "video", src: "https://www.loom.com/share/98a9016bf2764e9685d4be8ea3664328", provider: "loom" },
+    ],
+    stack: {
+      frontend: [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "Material UI",
+        "Tailwind CSS",
+      ],
+      backend: [],
+    },
+    role: "Frontend Developer (solo)",
+    demoUrl: "https://cebanoleksandr.github.io/2048/",
+    repoUrl: {
+      frontend: "https://github.com/cebanoleksandr/2048",
+    },
+    year: 2026,
+    featured: false,
+  },
   {
     slug: "orbit-crm",
     title: "Orbit CRM — Sales CRM Platform",
