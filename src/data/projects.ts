@@ -71,7 +71,75 @@ import orbit11 from "../assets/images/zoho/zoho11.png";
 
 import img2048 from "../assets/images/2048/2048.png";
 
+import deidCover from "../assets/images/med/med-main.png";
+import deidImg1 from "../assets/images/med/med1.png";
+import deidImg2 from "../assets/images/med/med2.png";
+import deidImg3 from "../assets/images/med/med3.png";
+import deidImg4 from "../assets/images/med/med4.png";
+import deidImg5 from "../assets/images/med/med5.png";
+import deidImg6 from "../assets/images/med/med6.png";
+import deidImg7 from "../assets/images/med/med7.png";
+import deidImg8 from "../assets/images/med/med8.png";
+import deidImg9 from "../assets/images/med/med9.png";
+
 export const projects = [
+    {
+    slug: "de-id-studio",
+    title: "De-ID Studio — Medical Text De-identification & Synthetic Data",
+    shortDescription:
+      "A full-stack platform that de-identifies medical texts under HIPAA, GDPR, UK GDPR, and Swiss FADP, and generates synthetic clinical datasets — React + TypeScript frontend, NestJS + PostgreSQL API, and a Python Presidio detection service.",
+    fullDescription:
+      "A privacy-first platform for de-identifying medical texts and generating synthetic clinical data, built end-to-end from a NestJS REST API and a Python detection service to a React SPA. Users sign in with a passwordless magic link and go through a de-identification wizard: pick a compliance framework (HIPAA Safe Harbor / Expert Determination, EU GDPR, UK GDPR, Swiss FADP), paste text or upload a PDF/DOCX/TXT file, configure replacement modes, then review the detected entities, toggle individual ones between Included and Excluded, and export the result. English and Ukrainian texts are supported. A synthetic data module generates datasets from four built-in types, from an uploaded table, or from a de-identified document, with record browsing, a compliance and quality report, and export to CSV, JSON, or XLSX. A dashboard shows counters, a per-day chart, and breakdowns for the selected period in the user's time zone, and an analysis history offers filters and CSV export. A landing page includes a contact form that emails the team and sends a confirmation to the visitor. The core design rule is that source text and identifier values are never stored. Analyses keep only settings and counters, and the client sends the text back for Included/Excluded toggling so the server can verify it against the analysis. Synthetic record number i is a deterministic function of (seed, i), so only parameters and a seed are stored and records are generated on the fly. Synthetic sources keep only an anonymized digest: column statistics from files, or a template with value types and shapes from documents. The digest is encrypted with AES-256-GCM and removed by TTL. Pseudonyms are derived with HMAC and a server secret, so they stay consistent without being stored, and logs and audit entries contain no text, emails, IPs, or file names. Deleting an account cascades through all of the user's data. On the backend, a NestJS API organized as modules-per-domain (auth, deidentify, synthetic, audit, dashboard, contact, mail) handles short-lived JWT access tokens with rotating httpOnly refresh cookies and reuse detection that revokes all sessions, TypeORM on PostgreSQL with migration-based schema management (synchronize disabled), env schema validation at startup, Swagger docs, and transactional emails through Resend or Brevo. A FastAPI service built on Microsoft Presidio, protected by an API key, adds custom recognizers (MRN, Ukrainian tax ID and passport, Swiss AHV, and more) and false-positive filters. On the frontend, data fetching follows a strict three-layer pattern: typed Axios services, TanStack Query hooks with centralized query keys, and components that consume only the hooks. The Axios client keeps the access token in memory and shares a single refresh request across parallel 401s. The wizard draft lives only in tab memory (never in localStorage, URL, or logs), i18next uses typed translation keys, and the layout is responsive with a slide-out navigation drawer. A hash router lets the app run on GitHub Pages without server-side rewrites, and a wake-up ping warms the free-tier detection service while the user is still on the first wizard steps.",
+    cover: deidCover,
+    media: [
+      { type: "image", src: deidImg1, alt: "" },
+      { type: "image", src: deidImg2, alt: "" },
+      { type: "image", src: deidImg3, alt: "" },
+      { type: "image", src: deidImg4, alt: "" },
+      { type: "image", src: deidImg5, alt: "" },
+      { type: "image", src: deidImg6, alt: "" },
+      { type: "image", src: deidImg7, alt: "" },
+      { type: "image", src: deidImg8, alt: "" },
+      { type: "image", src: deidImg9, alt: "" },
+      { type: "video", src: "https://www.loom.com/share/2f2f96bc02f6469591e9dde3d617c270", provider: "loom" },
+    ],
+    stack: {
+      frontend: [
+        "React 19",
+        "TypeScript (strict)",
+        "Vite",
+        "React Router (hash router)",
+        "TanStack Query",
+        "MUI",
+        "Framer Motion",
+        "react-i18next (typed keys)",
+        "react-hook-form",
+        "Yup",
+        "Axios",
+      ],
+      backend: [
+        "NestJS",
+        "TypeScript",
+        "TypeORM",
+        "PostgreSQL",
+        "JWT (access + rotating refresh cookie)",
+        "Magic-link auth",
+        "Microsoft Presidio (FastAPI, Python)",
+        "AES-256-GCM & HMAC pseudonymization",
+        "Swagger (OpenAPI)",
+        "Resend / Brevo",
+        "Docker Compose",
+      ],
+    },
+    role: "Full-Stack Developer (solo)",
+    demoUrl: "https://cebanoleksandr.github.io/medical-app-fe/",
+    repoUrl: {
+      frontend: "https://github.com/cebanoleksandr/medical-app-fe",
+      backend: "https://github.com/cebanoleksandr/medical-app-be",
+    },
+    year: 2026,
+    featured: false,
+  },
   {
     slug: "2048",
     title: "2048 — Puzzle Game",
