@@ -82,8 +82,77 @@ import deidImg7 from "../assets/images/med/med7.png";
 import deidImg8 from "../assets/images/med/med8.png";
 import deidImg9 from "../assets/images/med/med9.png";
 
+import n8nCover from "../assets/images/n8n/n-main.png";
+import n8nImg1 from "../assets/images/n8n/n1.png";
+import n8nImg2 from "../assets/images/n8n/n2.png";
+import n8nImg3 from "../assets/images/n8n/n3.png";
+import n8nImg4 from "../assets/images/n8n/n4.png";
+import n8nImg5 from "../assets/images/n8n/n5.png";
+import n8nImg6 from "../assets/images/n8n/n6.png";
+import n8nImg7 from "../assets/images/n8n/n7.png";
+import n8nImg8 from "../assets/images/n8n/n8.png";
+
 export const projects = [
     {
+    slug: "flow-workflow-automation",
+    title: "Flow — Workflow Automation Platform",
+    shortDescription:
+      "An n8n-style workflow automation platform with a visual node editor, queue-based execution, webhooks and schedules, encrypted credentials, and realtime run progress — React + TypeScript frontend, NestJS + PostgreSQL + Redis API.",
+    fullDescription:
+      "A workflow automation platform in the spirit of n8n, built end-to-end from a NestJS REST API and a BullMQ worker to a React SPA. Users build workflows on a visual canvas by connecting nodes, edit node parameters in forms generated from the server's node descriptions, write expressions with autocomplete and live evaluation in a CodeMirror editor, and run a whole workflow or only a selected part of it. Triggers include webhooks, cron schedules, error triggers, and calls from other workflows. The node library covers flow control (If, Switch, Merge, Execute Workflow, Wait), data transformation (Set, Filter, Split Out, Aggregate, Sort, Limit, Remove Duplicates, Code), and integrations (HTTP Request, Telegram, Slack, Postgres, Send Email). The editor autosaves, keeps an immutable version history with restore, and supports pinned data, test webhooks, per-node retries, timeouts, cancellation, and error workflows. Runs report progress to the browser in realtime, and execution history shows per-node output. Workflows can be exported and imported as portable JSON. Credentials are stored encrypted and support OAuth2 (authorization code with PKCE, client credentials). The app has multi-user workspaces with four roles (viewer, editor, admin, owner), invitations by one-time link, password change, and a light/dark theme. On the backend, a NestJS API organized as modules-per-domain (workflows, executions, worker, triggers, webhooks, credentials, binary-data, expressions, events, node-types, auth, workspaces) enqueues runs into BullMQ on Redis, while workers execute them through a framework-free engine. A run is a database row plus one step row per executed node, and a worker claims it with a conditional UPDATE so a duplicated job can never execute twice. Expressions are interpreted by a small JS-like language rather than eval'd, and the Code node runs JavaScript inside an isolated-vm sandbox in a separate process. Authentication uses short-lived JWT access tokens with rotating httpOnly refresh cookies and reuse detection, scrypt password hashing, Redis-based login rate limiting, and a deny-by-default global guard with strict workspace scoping. Files flowing through workflows are stored in S3-compatible storage, credentials are encrypted with AES-256-GCM, and progress events travel over Redis pub/sub to a socket.io gateway. Persistence is handled by TypeORM on PostgreSQL with migrations, and the API is documented with Swagger. The frontend is covered by Vitest unit tests and Playwright end-to-end tests that run against an isolated backend stack, with CI on GitHub Actions. The app is deployed for free: the SPA on GitHub Pages, the API on Render, Postgres on Neon, and files on Backblaze B2.",
+    cover: n8nCover,
+    media: [
+      { type: "image", src: n8nImg1, alt: "" },
+      { type: "image", src: n8nImg2, alt: "" },
+      { type: "image", src: n8nImg3, alt: "" },
+      { type: "image", src: n8nImg4, alt: "" },
+      { type: "image", src: n8nImg5, alt: "" },
+      { type: "image", src: n8nImg6, alt: "" },
+      { type: "image", src: n8nImg7, alt: "" },
+      { type: "image", src: n8nImg8, alt: "" },
+      { type: "video", src: "https://www.loom.com/share/4099dc197da64142b0bb7df118c894c6", provider: "loom" },
+    ],
+    stack: {
+      frontend: [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "React Flow",
+        "CodeMirror",
+        "TanStack Query",
+        "MUI",
+        "socket.io-client",
+        "Axios",
+        "Vitest",
+        "Playwright",
+      ],
+      backend: [
+        "NestJS",
+        "TypeScript",
+        "TypeORM",
+        "PostgreSQL (Neon)",
+        "BullMQ & Redis",
+        "S3-compatible storage (Backblaze B2)",
+        "socket.io (@nestjs/websockets)",
+        "JWT (access + rotating refresh cookie)",
+        "isolated-vm (Code node sandbox)",
+        "AES-256-GCM credential encryption",
+        "OAuth2 (PKCE)",
+        "Swagger (OpenAPI)",
+        "Docker Compose",
+        "GitHub Actions (CI)",
+      ],
+    },
+    role: "Full-Stack Developer (solo)",
+    demoUrl: "https://cebanoleksandr.github.io/n8n-fe/",
+    repoUrl: {
+      frontend: "https://github.com/cebanoleksandr/n8n-fe",
+      backend: "https://github.com/cebanoleksandr/n8n-be",
+    },
+    year: 2026,
+    featured: false,
+  },
+  {
     slug: "de-id-studio",
     title: "De-ID Studio — Medical Text De-identification & Synthetic Data",
     shortDescription:
